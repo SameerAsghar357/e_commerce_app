@@ -1,7 +1,5 @@
 // ignore_for_file: unused_import
-
 import 'dart:async';
-
 import 'package:e_commerce_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
@@ -24,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 1),
       () => Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => OnboardingScreen()),
