@@ -48,7 +48,6 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ],
           ),
-
           /// Skip Button
           const OnBoardingSkip(),
 

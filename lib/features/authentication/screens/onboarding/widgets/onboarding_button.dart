@@ -1,9 +1,12 @@
 import 'package:e_commerce_app/features/authentication/controllers/onboarding_controller.dart';
+import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 import 'package:iconsax/iconsax.dart';
 
 class OnBoardingButton extends StatelessWidget {
@@ -24,6 +27,7 @@ class OnBoardingButton extends StatelessWidget {
           backgroundColor: dark ? AppColors.primary : AppColors.dark,
         ),
         onPressed: () {
+          // 1st way
           // if (getXcontroller.currentPageIndex.value == 2) {
           //   /// Go To Login Page
           //   // Get.to(LoginPage());
@@ -34,7 +38,15 @@ class OnBoardingButton extends StatelessWidget {
           //   );
           // }
           // 2nd way
-          OnBoardingController.instance.nextPage();
+          if (OnBoardingController.instance.currentPageIndex.value == 2) {
+            /// Go To Login Page
+            Get.to(Login());
+          } else {
+            OnBoardingController.instance.pageController.nextPage(
+              duration: Duration(seconds: 1),
+              curve: Curves.ease,
+            );
+          }
         },
         child: Icon(Iconsax.arrow_right_3),
       ),
