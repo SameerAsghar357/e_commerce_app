@@ -1,8 +1,8 @@
 import 'package:e_commerce_app/common/widgets/search_bar/custom_searchbar.dart';
 import 'package:flutter/material.dart';
 
-class PrimarySearchBar extends StatelessWidget {
-  const PrimarySearchBar({
+class HomeScreenSearchBar extends StatelessWidget {
+  const HomeScreenSearchBar({
     super.key,
   });
 

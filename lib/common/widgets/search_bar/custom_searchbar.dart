@@ -9,13 +9,13 @@ class CustomSearchBar extends StatelessWidget {
     super.key,
     required this.text,
     this.icon = Iconsax.search_normal,
-    this.showBackground = true,
+    this.showBackGround = true,
     this.showBorder = true,
   });
 
   final String text;
-  final IconData? icon;
-  final bool showBackground, showBorder;
+  final IconData icon;
+  final bool showBackGround, showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -25,26 +25,30 @@ class CustomSearchBar extends StatelessWidget {
       child: Container(
         height: 56,
         decoration: BoxDecoration(
-          color: showBackground
+          color: showBackGround
               ? darkMode
                     ? AppColors.dark
                     : AppColors.white
               : Colors.transparent,
-          border: Border.all(color: AppColors.white),
-          borderRadius: BorderRadius.circular(AppSizes.cardRadiusLg),
+          border: showBorder ? Border.all(color: AppColors.white) : null,
+          borderRadius: BorderRadius.circular(AppSizes.borderRadiusLg),
         ),
         child: Row(
           children: [
-            const SizedBox(width: AppSizes.md),
-            Icon(
-              icon,
-              color: darkMode ? AppColors.white : AppColors.darkerGrey,
-            ),
-            const SizedBox(width: AppSizes.md),
-            Text(
-              text,
-              style: Theme.of(context).textTheme.bodyMedium!.apply(
+            Padding(
+              padding: const EdgeInsets.only(left: AppSizes.spaceBtwItems),
+              child: Icon(
+                icon,
                 color: darkMode ? AppColors.white : AppColors.darkerGrey,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: AppSizes.spaceBtwItems),
+              child: Text(
+                text,
+                style: Theme.of(context).textTheme.bodyMedium!.apply(
+                  color: darkMode ? AppColors.white : AppColors.darkerGrey,
+                ),
               ),
             ),
           ],
