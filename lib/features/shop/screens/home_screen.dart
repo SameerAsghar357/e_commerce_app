@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/widgets/home_searchbar.dart';
 import 'package:e_commerce_app/features/shop/screens/widgets/home_appbar.dart';
@@ -44,14 +46,13 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             // Body
-            Padding(
-              padding: EdgeInsetsGeometry.all(AppSizes.defaultSpace),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(AppSizes.md),
-                ),
-                child: const Image(image: AssetImage(AppImages.banner3)),
-              ),
+            CarouselSlider(
+              options: CarouselOptions(viewportFraction: 1),
+              items: [
+                RoundedImage(imageUrl: AppImages.banner1),
+                RoundedImage(imageUrl: AppImages.banner2),
+                RoundedImage(imageUrl: AppImages.banner3),
+              ],
             ),
           ],
         ),
