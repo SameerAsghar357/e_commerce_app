@@ -1,7 +1,8 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:e_commerce_app/common/widgets/search_bar/custom_searchbar.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
-import 'package:e_commerce_app/features/shop/screens/widgets/home_searchbar.dart';
 import 'package:e_commerce_app/features/shop/screens/widgets/home_appbar.dart';
+import 'package:e_commerce_app/features/shop/screens/widgets/promo_slider.dart';
 import 'package:e_commerce_app/features/shop/screens/widgets/section_categories.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                   const HomeScreenAppBar(),
                   const SizedBox(height: AppSizes.spaceBtwSections),
                   // SearchBar
-                  const HomeScreenSearchBar(),
+                  const CustomSearchBar(text: "Search in Store"),
                   const SizedBox(height: AppSizes.spaceBtwSections),
                   // Categories List
                   Padding(
@@ -45,12 +46,21 @@ class HomeScreen extends StatelessWidget {
             ),
             // Body
             Padding(
-              padding: EdgeInsetsGeometry.all(AppSizes.defaultSpace),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(AppSizes.md),
-                ),
-                child: const Image(image: AssetImage(AppImages.banner3)),
+              padding: const EdgeInsets.all(AppSizes.defaultSpace),
+              child: Column(
+                children: [
+                  PromoSlider(
+                    banners: [
+                      AppImages.promoBanner1,
+                      AppImages.promoBanner2,
+                      AppImages.promoBanner3,
+                    ],
+                  ),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
+                  SectionHeading(title: "Popular Products", onPressed: () {}),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
+                  // const ProductCardVertical(),
+                ],
               ),
             ),
           ],

@@ -17,7 +17,7 @@ class HomeScreenAppBar extends StatelessWidget {
           Text(
             textAlign: TextAlign.start,
             AppTexts.homeAppbarTitle,
-            style: Theme.of(context).textTheme.labelLarge!.apply(
+            style: Theme.of(context).textTheme.bodyLarge!.apply(
               color: AppColors.white,
               fontSizeFactor: 0.8,
             ),
