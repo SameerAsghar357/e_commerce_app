@@ -3,13 +3,17 @@ import 'package:e_commerce_app/common/styles/shadow.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/rounded_containers.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/common/widgets/text/brand_title_with_verified_icon.dart';
+import 'package:e_commerce_app/common/widgets/text/discount_tag.dart';
 import 'package:e_commerce_app/common/widgets/text/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/text/product_title_text.dart';
+import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_details.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/state_manager.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProductCardVertical extends StatelessWidget {
@@ -19,7 +23,7 @@ class ProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final darkMode = HelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => ProductDetails()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -47,25 +51,7 @@ class ProductCardVertical extends StatelessWidget {
                   ),
 
                   /// -- Sale Tag
-                  Positioned(
-                    top: 12,
-                    child: RoundedContainers(
-                      radius: AppSizes.sm,
-                      backgroundColor: AppColors.secondary.withValues(
-                        alpha: 0.8,
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSizes.sm,
-                        vertical: AppSizes.xs,
-                      ),
-                      child: Text(
-                        "25%",
-                        style: Theme.of(
-                          context,
-                        ).textTheme.labelLarge!.apply(color: AppColors.black),
-                      ),
-                    ),
-                  ),
+                  Positioned(top: 12, child: DiscountTag(text: "25")),
 
                   /// -- Favourite Icon Button
                   Positioned(
@@ -98,13 +84,16 @@ class ProductCardVertical extends StatelessWidget {
               ),
             ),
             const Spacer(),
+            // -- Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Price
                 Padding(
                   padding: const EdgeInsets.only(left: AppSizes.sm),
                   child: const ProductPriceText(price: '35.5'),
                 ),
+                // Add to Cart Button
                 Container(
                   decoration: BoxDecoration(
                     color: AppColors.dark,

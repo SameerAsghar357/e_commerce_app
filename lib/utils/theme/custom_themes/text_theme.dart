@@ -65,7 +65,7 @@ class AppTextTheme {
     ),
   );
 
-  /// Customizeable Light Text Theme
+  /// Customizeable Dark Text Theme
   static TextTheme darkTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
       fontSize: 32.0,

@@ -27,7 +27,7 @@ class CartCounterIcon extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                "2",
+                "0",
                 style: Theme.of(context).textTheme.labelLarge!.apply(
                   color: AppColors.white,
                   fontSizeFactor: 0.8,

@@ -48,10 +48,11 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: AppSizes.spaceBtwSections),
                 ],
               ),
             ),
-            // Body
+            // -- Body
             Padding(
               padding: const EdgeInsets.all(AppSizes.defaultSpace),
               child: Column(
@@ -66,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
                   SectionHeading(title: "Popular Products", onPressed: () {}),
-                  // const SizedBox(height: AppSizes.spaceBtwItems),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
 
                   /// -- Popular Products
                   GridLayout(
