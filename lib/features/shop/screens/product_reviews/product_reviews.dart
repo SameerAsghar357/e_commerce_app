@@ -1,10 +1,9 @@
 import 'package:e_commerce_app/common/widgets/app_bar/custom_appbar.dart';
+import 'package:e_commerce_app/common/widgets/products/ratings/rating_indicator.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/overall_product_rating.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
@@ -32,13 +31,18 @@ class ProductReviewsScreen extends StatelessWidget {
 
               const OverallProductRating(),
 
-              RatingBarIndicator(
-                rating: 3.5,
-                itemCount: 5,
-                itemSize: 20,
-                itemBuilder: (_, _) =>
-                    const Icon(Iconsax.star1, color: AppColors.primary),
+              const MyRatingBarIndicator(rating: 4.5),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(
+                  "12,611",
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
               ),
+              const SizedBox(height: AppSizes.spaceBtwSections),
+              UserReviewCard(),
+              UserReviewCard(),
+              UserReviewCard(),
             ],
           ),
         ),

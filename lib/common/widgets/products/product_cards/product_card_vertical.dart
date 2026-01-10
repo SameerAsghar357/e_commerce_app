@@ -102,10 +102,15 @@ class ProductCardVertical extends StatelessWidget {
                       bottomRight: Radius.circular(AppSizes.productImageRadius),
                     ),
                   ),
-                  child: const SizedBox(
-                    height: AppSizes.iconLg * 1.2,
-                    width: AppSizes.iconLg * 1.2,
-                    child: Icon(Iconsax.add, color: AppColors.white),
+                  child: GestureDetector(
+                    onTap: () {
+                      debugPrint("add button pressed");
+                    },
+                    child: SizedBox(
+                      height: AppSizes.iconLg * 1.2,
+                      width: AppSizes.iconLg * 1.2,
+                      child: Icon(Iconsax.add, color: AppColors.white),
+                    ),
                   ),
                 ),
               ],

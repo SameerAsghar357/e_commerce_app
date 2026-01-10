@@ -1,8 +1,10 @@
 import 'package:e_commerce_app/common/widgets/app_bar/custom_appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_cart/custom_cartcounter.dart';
+import 'package:e_commerce_app/features/personalization/screens/cart/cart.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreenAppBar extends StatelessWidget {
   const HomeScreenAppBar({super.key});
@@ -31,7 +33,12 @@ class HomeScreenAppBar extends StatelessWidget {
           ),
         ],
       ),
-      actions: [CartCounterIcon(iconColor: AppColors.white, onPressed: () {})],
+      actions: [
+        CartCounterIcon(
+          iconColor: AppColors.white,
+          onPressed: () => Get.to(() => CartScreen()),
+        ),
+      ],
     );
   }
 }

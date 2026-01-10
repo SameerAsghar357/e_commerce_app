@@ -5,11 +5,14 @@ import 'package:e_commerce_app/common/widgets/custom_cart/custom_cartcounter.dar
 import 'package:e_commerce_app/common/widgets/brands/brand_card.dart';
 import 'package:e_commerce_app/common/widgets/search_bar/custom_searchbar.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
+import 'package:e_commerce_app/features/personalization/screens/cart/cart.dart';
 import 'package:e_commerce_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/state_manager.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -25,7 +28,9 @@ class StoreScreen extends StatelessWidget {
             "Store",
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          actions: [CartCounterIcon(onPressed: () {})],
+          actions: [
+            CartCounterIcon(onPressed: () => Get.to(() => CartScreen())),
+          ],
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {

@@ -2,7 +2,12 @@
 
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:e_commerce_app/features/personalization/screens/address/address.dart';
+import 'package:e_commerce_app/features/personalization/screens/address/widgets/add_new_address.dart';
+import 'package:e_commerce_app/features/personalization/screens/cart/cart.dart';
+import 'package:e_commerce_app/features/shop/screens/checkout/checkout.dart';
 import 'package:e_commerce_app/features/shop/screens/home/home_screen.dart';
+import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/product_details.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:e_commerce_app/features/shop/screens/store/store.dart';
@@ -31,7 +36,7 @@ class MainApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MyAppTheme.lightTheme,
       darkTheme: MyAppTheme.darkTheme,
-      home: ProductReviewsScreen(),
+      home: NavigationMenu(),
     );
   }
 }

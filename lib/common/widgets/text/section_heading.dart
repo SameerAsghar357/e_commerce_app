@@ -38,13 +38,9 @@ class SectionHeading extends StatelessWidget {
             onPressed: onPressed,
             child: Text(
               buttonTitle,
-              style: Theme.of(context).textTheme.labelLarge!.apply(
-                color: textColor != null
-                    ? textColor!
-                    : darkMode
-                    ? AppColors.white
-                    : AppColors.dark,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.labelLarge!.apply(color: AppColors.primary),
             ),
           ),
       ],

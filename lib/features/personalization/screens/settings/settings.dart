@@ -1,10 +1,12 @@
 import 'package:e_commerce_app/common/widgets/app_bar/custom_appbar.dart';
-import 'package:e_commerce_app/common/widgets/custom_cart/custom_cartcounter.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
 import 'package:e_commerce_app/common/widgets/list_tile/settings_menu_tile.dart';
+import 'package:e_commerce_app/features/personalization/screens/address/address.dart';
+import 'package:e_commerce_app/features/personalization/screens/cart/cart.dart';
 import 'package:e_commerce_app/features/personalization/screens/profile/profile.dart';
+import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -34,14 +36,8 @@ class SettingsScreen extends StatelessWidget {
                         context,
                       ).textTheme.headlineMedium!.apply(color: AppColors.white),
                     ),
-                    actions: [
-                      CartCounterIcon(
-                        iconColor: AppColors.white,
-                        onPressed: () {},
-                      ),
-                    ],
                   ),
-                  const SizedBox(height: AppSizes.spaceBtwSections),
+                  // const SizedBox(height: AppSizes.spaceBtwItems),
 
                   // User Profile Card
                   UserProfileTile(
@@ -70,17 +66,19 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBtwItems),
 
                   SettingsMenuTile(
+                    onTap: () => Get.to(() => UserAddressScreen()),
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
                     subTitle: 'Set shopping addresses',
-                    // onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
-                  const SettingsMenuTile(
+                  SettingsMenuTile(
+                    onTap: () => Get.to(() => CartScreen()),
                     icon: Iconsax.shopping_cart,
                     title: 'My Cart',
                     subTitle: 'Add, remove products & move to checkout',
                   ),
                   SettingsMenuTile(
+                    onTap: () => Get.to(() => OrderScreen()),
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-progress & completed orders',

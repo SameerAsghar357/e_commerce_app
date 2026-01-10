@@ -36,10 +36,10 @@ class MyAppTheme {
     textTheme: AppTextTheme.darkTextTheme,
     elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
     appBarTheme: AppAppBarTheme.darkAppBarTheme,
-    chipTheme: AppChipTheme.lightChipTheme,
-    checkboxTheme: AppCheckBoxTheme.lightCheckboxTheme,
-    bottomSheetTheme: AppBottomsheetTheme.lightBottomSheetTheme,
-    outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
-    inputDecorationTheme: AppTextFeildTheme.lightInputDecorationTheme,
+    chipTheme: AppChipTheme.darkChipTheme,
+    checkboxTheme: AppCheckBoxTheme.darkCheckboxTheme,
+    bottomSheetTheme: AppBottomsheetTheme.darkBottomSheetTheme,
+    outlinedButtonTheme: AppOutlinedButtonTheme.darkOutlinedButtonTheme,
+    inputDecorationTheme: AppTextFeildTheme.darkInputDecorationTheme,
   );
 }
