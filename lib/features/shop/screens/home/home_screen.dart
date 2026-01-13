@@ -3,6 +3,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/containers/primary_h
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/search_bar/custom_searchbar.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
+import 'package:e_commerce_app/features/shop/screens/all_products/all_products.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/section_categories.dart';
@@ -10,6 +11,7 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         SectionHeading(
                           title: "Popular Categories",
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => AllProducts()),
                           showActionButton: false,
                           textColor: AppColors.white,
                         ),
@@ -66,7 +68,10 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
-                  SectionHeading(title: "Popular Products", onPressed: () {}),
+                  SectionHeading(
+                    title: "Popular Products",
+                    onPressed: () => Get.to(() => AllProducts()),
+                  ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
 
                   /// -- Popular Products

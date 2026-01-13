@@ -5,12 +5,16 @@ import 'package:e_commerce_app/features/authentication/screens/onboarding/onboar
 import 'package:e_commerce_app/features/personalization/screens/address/address.dart';
 import 'package:e_commerce_app/features/personalization/screens/address/widgets/add_new_address.dart';
 import 'package:e_commerce_app/features/personalization/screens/cart/cart.dart';
+import 'package:e_commerce_app/features/shop/screens/all_products/all_products.dart';
+import 'package:e_commerce_app/features/shop/screens/brands/all_brands.dart';
+import 'package:e_commerce_app/features/shop/screens/brands/brand_products.dart';
 import 'package:e_commerce_app/features/shop/screens/checkout/checkout.dart';
 import 'package:e_commerce_app/features/shop/screens/home/home_screen.dart';
 import 'package:e_commerce_app/features/shop/screens/order/order.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/product_details.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:e_commerce_app/features/shop/screens/store/store.dart';
+import 'package:e_commerce_app/features/shop/screens/subcategory/subcategory.dart';
 import 'package:e_commerce_app/navigation_menu.dart';
 import 'package:e_commerce_app/splash_screen.dart';
 import 'package:e_commerce_app/utils/theme/theme.dart';
