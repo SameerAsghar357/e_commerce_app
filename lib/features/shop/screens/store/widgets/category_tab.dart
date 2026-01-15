@@ -2,9 +2,12 @@ import 'package:e_commerce_app/common/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/brands/brand_showcase.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
+import 'package:e_commerce_app/features/shop/screens/all_products/all_products.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class CategoryTab extends StatelessWidget {
   const CategoryTab({super.key});
@@ -34,7 +37,10 @@ class CategoryTab extends StatelessWidget {
               ),
               const SizedBox(height: AppSizes.spaceBtwItems),
               // -- Products
-              SectionHeading(title: "You Might Like", onPressed: () {}),
+              SectionHeading(
+                title: "You Might Like",
+                onPressed: () => Get.to(() => AllProducts()),
+              ),
               const SizedBox(height: AppSizes.spaceBtwItems),
 
               GridLayout(

@@ -6,6 +6,7 @@ import 'package:e_commerce_app/common/widgets/brands/brand_card.dart';
 import 'package:e_commerce_app/common/widgets/search_bar/custom_searchbar.dart';
 import 'package:e_commerce_app/common/widgets/text/section_heading.dart';
 import 'package:e_commerce_app/features/personalization/screens/cart/cart.dart';
+import 'package:e_commerce_app/features/shop/screens/brands/all_brands.dart';
 import 'package:e_commerce_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -64,7 +65,7 @@ class StoreScreen extends StatelessWidget {
                       /// -- Featured Brands
                       SectionHeading(
                         title: "Featured Brands",
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => AllBrandsScreen()),
                       ),
                       const SizedBox(height: AppSizes.spaceBtwItems / 1.5),
 
