@@ -28,13 +28,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setSystemUIOverlayStyle(  
-    //   SystemUiOverlayStyle(
-    //     statusBarColor: Colors.red,
-    //     systemNavigationBarColor: Colors.red,
-    //   ),
-    // );
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
